@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../context";
 
 const Search = () => {
-  const { setSearchTerm } = useGlobalContext();
+  const { setSearchTerm, fetchRandomMeal } = useGlobalContext();
 
   const [text, setText] = useState("");
 
@@ -11,9 +11,15 @@ const Search = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (text) {
+    if (text.trim()) {
       setSearchTerm(text);
     }
+  };
+
+  const handleRandomMeal = () => {
+    setSearchTerm("");
+    setText("");
+    fetchRandomMeal();
   };
 
   return (
@@ -29,7 +35,11 @@ const Search = () => {
         <button className="btn" type="submit">
           Search
         </button>
-        <button className="btn btn-hipster" type="button">
+        <button
+          onClick={handleRandomMeal}
+          className="btn btn-hipster"
+          type="button"
+        >
           Suprise Me!
         </button>
       </form>
