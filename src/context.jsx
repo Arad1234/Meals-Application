@@ -21,7 +21,6 @@ const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [selectedMeal, setSelectedMeal] = useState(null);
-
   const [favorites, setFavorites] = useState(getFavoritesFromLocalStorage());
 
   const selectMeal = (idMeal, favoriteMeal) => {
