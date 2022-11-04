@@ -10,7 +10,6 @@ const Modal = () => {
     strSource: source,
   } = selectedMeal;
 
-  console.log(title);
   return (
     <aside className="modal-overlay">
       <div className="modal-container">
